@@ -2,10 +2,9 @@
 const express = require("express");
 const router = express.Router();
 const keys = require("../config/keys")
-
 const bcrypt = require('bcrypt');
 // import controller 
-const { signup } = require("../controllers/userController");
+
 const jwt = require('jsonwebtoken');
 // Express Validators 
 const {
@@ -16,11 +15,14 @@ const {
 
 
 
-// router.post("/signup", signup);
+// Auth Users using post request with validators 
 
+const User = require('../../models/User');
+  // @route GET api/auth
+  // @DESC  Test Route 
+  // @access Public 
 
-
-// Register Users using post request with validators 
+  // 
 
 
 router.post(
