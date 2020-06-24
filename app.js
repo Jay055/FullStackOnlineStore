@@ -3,9 +3,11 @@ const keys = require('./config/keys');
 const express = require("express");
 const app = express(); 
 const mongoose = require('mongoose');
+
 require('dotenv').config
 // Set up ENV Variables 
 
+const userRoutes = require('./routes/user')
 
 
 
@@ -22,13 +24,8 @@ mongoose.connect(keys.mongoURI, {
 
 
 
-
-
-app.get("/", (req, res) => {
-  res.send("hello from node");
-
-});
-
+// Routes Middleware 
+app.use(userRoutes)
 
 const port = process.env.PORT || 8000
 
