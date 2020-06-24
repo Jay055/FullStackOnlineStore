@@ -11,15 +11,15 @@ const UserSchema = new mongoose.Schema({
     type: String, 
     trim: true, 
     required: true,
-    maxlength: 32,
-    minlength:3
+    // maxlength: 32,
+    // minlength:3
   },
 
   email: {
     type: String, 
-    trim: true,
+    // trim: true,
     required: true, 
-    unique: 32
+    // unique: 32
   },
   password: {
     type: String,
@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
     trim: true,
   },
   // used to generate the hashed password
-  salt: String,
+  // salt: String,
   role: {
     type: Number, 
     default: 0
